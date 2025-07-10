@@ -26,7 +26,7 @@ This project demonstrates SQL skills to clean, explore and analyze a retails sal
                 2. Change empty values to null values and delete unnecessary data
                 3. Make sure every column is spelled by my choice
 
-   2. Exploratory Data Analysis
+2. Exploratory Data Analysis
   
            1. Number of customers till date
            2. Number of male and female customer and their ratio
@@ -46,7 +46,7 @@ This project demonstrates SQL skills to clean, explore and analyze a retails sal
           16. Average days between purchase by customer
      
      
-    4. Business Analysis
+ 4. Business Analysis
        
        - 155 unique customers till date
          
