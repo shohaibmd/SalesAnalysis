@@ -27,23 +27,24 @@ This project demonstrates SQL skills to clean, explore and analyze a retails sal
                 3. Make sure every column is spelled by my choice
 
    2. Exploratory Data Analysis
-      
-        - Number of customers till date
-        - Number of male and female customer and their ratio
-        - Time of the sales
-        - What day customer prefers to buy more and which category
-        - Which category is the most sold by each quarter
-        - Which category is the most sold based on gender
-        - The average quantity of product customer buy
-        - Profit from 5 repeated customer
-        - Profit in each category
-        - Total sales and profit by each category
-        - Category sold by age and gender
-        - Total sales of each category
-        - Average sales of each month
-        - Top 5 customers based on highest total sales
-        - First and last visit by customer
-        - Average days between purchase by customer
+  
+      1. Number of customers till date
+      2. Number of male and female customer and their ratio
+      3. Time of the sales
+      4. What day customer prefers to buy more and which category
+      5. Which category is the most sold by each quarter
+      6. Which category is the most sold based on gender
+      7. The average quantity of product customer buy
+      8. Profit from 5 repeated customer
+      9. Profit in each category
+      10. Total sales and profit by each category
+      11. Category sold by age and gender
+      12. Total sales of each category
+      13. Average sales of each month
+      14. Top 5 customers based on highest total sales
+      15. First and last visit by customer
+      16. Average days between purchase by customer
+     
      
     4. Business Analysis
        
