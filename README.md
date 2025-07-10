@@ -46,6 +46,21 @@ This project demonstrates SQL skills to clean, explore and analyze a retails sal
           16. Average days between purchase by customer
      
      
+5. Findings
+
+       1. The ratio of male and female customer is almost same with a slightly more female customer
+       2. The most sells happen between 6pm - 12am.
+       3. Beauty products mostly sold on Saturday, Clothing on Sunday, Electronics on Saturday. Customer prefers to buy in weekend for all the categories
+       4. Electronics is the most sold category based on total quantity in the 4th quarter of each year. In general 4th quarter gets the most sales each year.
+       5. Male clothing is sold more than woman clothing.
+       6. The top 5 customer to get profit is with id = 3, 1, 5, 2, 4 respectively
+       7. Clothing is the most profitable category following Electronics and Beauty
+       8. In 2022, Electronics was the most proftiable category. In 2023, Clothing was the most profitable category. But overall Clothing is the most proftiable category.
+       9. Top average sales happen in April and least in January
+       10. But the best selling month is December each year
+
+ 
+ 
  4. Business Analysis
        
        - 155 unique customers till date
@@ -100,6 +115,12 @@ This project demonstrates SQL skills to clean, explore and analyze a retails sal
          
          <img width="292" alt="Screenshot 2025-07-07 at 11 16 58" src="https://github.com/user-attachments/assets/57e72b1c-2aaf-4e64-a2ad-b651138a7708" />
 
+
+  6. Decision
+
+         1. As people tends to buy more product between 6pm-12am, company should focus on running more ads in this time period so that customers can get their mind focused on buying without being busy with another work in their daytime.
+         2. Weekends sales is the most profitable. Different discounts or offers in weekends will attract more customers.
+         3. Focus on Electronics and Beauty producs as they are getting low sales. Bring new product range, offers, discounts, promotions.
 
          
 
