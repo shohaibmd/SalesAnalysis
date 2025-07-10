@@ -62,7 +62,7 @@ group by gender;
  sum(gender = 'male') / count(gender), 2) as male_percentage 
  from retails;
  
--- What is the avg time period of the sales -- 
+-- Time period of the sales -- 
  select case when hour(sale_time)< 6 then 'Night'
  when hour(sale_time) < 12 then 'Morning' 
  when hour(sale_time) < 18 then 'Afternoon' 
