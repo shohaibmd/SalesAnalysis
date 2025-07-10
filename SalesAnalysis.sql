@@ -45,6 +45,7 @@ and quantity is null or price_per_unit is null or cogs is null or
 
  -- number of male and female customers? -- 
  select count( gender) from retails group by gender; 
+
 select case gender when 'Male' then 'M'
 when 'Female' then 'F'
 end as gender,
@@ -53,9 +54,6 @@ from retails
 group by gender;
 
  -- Ratio of Male and female customers -- 
- select round( (select sum(count(gender)) from retails where gender = 'male') / (select sum(gender) from retails), 2) from retails; 
- select sum(gender) from retails; 
- 
  select sum(gender = 'male') as male_count, 
  count(gender) as total, 
  round (100*
@@ -71,10 +69,8 @@ group by gender;
  sum(quantity) as quantity, sum(total_sale) as total_sales from retails
  group by time_slot
  order by sum(total_sale) desc;
- select * from retails;
- 
- -- What day customer prefers to buy more -- 
 
+-- What day customer prefers to buy more -- 
  select dayname(sale_date) as weekday,
  sum(quantity) as total_sales, category
  from retails
@@ -83,8 +79,9 @@ group by gender;
  limit 5;
 
 -- Which category is the most sold by quarter -- 
- sum(quantity) as quantity,
-  rank () over ( partition by year(sale_date), quarter(sale_date) order by sum(quantity) desc) as category_rank
+  sum(quantity) as quantity,
+  rank () 
+   over ( partition by year(sale_date), quarter(sale_date) order by sum(quantity) desc) as category_rank
   from retails 
   group by year, quarter, category
   order by quantity desc;
@@ -108,18 +105,18 @@ from retails group by customer_id having count(*) >1 order by purchase_count des
 
 select  customer_id, round(sum(total_sale - cogs),  2) as profit from retails group by customer_id order by profit desc limit 5;
 
--- how much profit we had in each category -- 
+-- Proft in each category -- 
 select category, round( sum(price_per_unit - cogs), 2) as profit from retails 
 group by category
 order by profit desc;
 
--- possible to compare by each year as well || in 2022 the electronics category was the most sold. But in 2023 clothing ranked first. Beauty remains almost constant each year. 
+-- Selected Year profit -- 
 select category, round(sum(price_per_unit - cogs) ,2) as profit from retails
 where year(sale_date) = 2022
 group by category
 order by profit desc;
 
--- total sales and profit by each category -- 
+-- Total sales and profit by each category -- 
 select category, round(sum(price_per_unit - cogs),2) as profit, sum(quantity) as quantity
 from retails 
 group by category
@@ -159,24 +156,31 @@ select customer_id, round(avg(days_between), 1) as avg_days_between_visits, coun
  ; 
 
  -- Some other exploration -- 
+
  -- write a sql query to retrive all columns for sales made on 2022-11-05
  select * from retails limit 1;
  select * from retails where sale_date = '2022-11-05'
  order by sale_time asc;
+
  -- Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022
  select * from retails where category = 'clothing' and quantity >=4 and date_format(sale_date, '%Y-%m') = '2022-11'
  order by sale_date;
+
  -- Write a SQL query to calculate the total sales (total_sale) for each category
  select sum(total_sale) as total_sales, category, count(quantity) as quantity_sold from retails
  group by category
  order by total_sales desc;
+
  -- Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category
  select avg(age) as age from retails where category = 'Beauty' ;
+
  -- Write a SQL query to find all transactions where the total_sale is greater than 1000
  select * from retails where total_sale > '1000' order by sale_date asc;
+
  -- Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.:
 select count(transactions_id), gender, category from retails
 group by gender, category order by 1;
+
 -- Write a SQL query to calculate the average sale for each month. 
 select round(avg(total_sale), 2) as avg_total_sale, round(avg(quantity), 2) as avg_quantity_sold,  monthname(sale_date) as month_name from retails 
 group by  monthname(sale_date), month(sale_date)
@@ -188,8 +192,7 @@ from retails
 group by customer_id 
 order by total_sale desc  
 limit 5 ;
--- Write a SQL query to find the number of unique customers who purchased items 
-select category, count(distinct customer_id) from retails group by category;
+
 
 
 
